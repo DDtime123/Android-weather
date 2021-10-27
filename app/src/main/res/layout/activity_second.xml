@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_second"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:stretchColumns="0,1,2"
+        android:shrinkColumns="0,1,2"> <!--shrinkColumns 设置可收缩的列，(内容过多，则收缩，扩展到第二行，控件没布满TableLayout时不起作用)-->
+        <Button
+            android:text="首页"
+            android:layout_height="150dp"
+            android:drawableTop="@mipmap/home"/>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFCD6B"
+        android:stretchColumns="0,1">
+        <TableRow>
+            <Button
+                android:id="@+id/position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的位置"
+                android:drawableRight="@mipmap/location"/>
+            <Button
+                android:id="@+id/student"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="学生管理"
+                android:drawableRight="@mipmap/student"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="拍一拍"
+                android:drawableRight="@mipmap/camera"/>
+            <Button
+                android:id="@+id/alipay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="智慧支付"
+                android:drawableRight="@mipmap/alipay"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/music"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的音乐"
+                android:drawableRight="@mipmap/music"/>
+            <Button
+                android:id="@+id/toolbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="工具箱"
+                android:drawableRight="@mipmap/toolbox"/>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
