@@ -8,11 +8,14 @@
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
         android:stretchColumns="0,1,2"
-        android:shrinkColumns="0,1,2"> <!--shrinkColumns 设置可收缩的列，(内容过多，则收缩，扩展到第二行，控件没布满TableLayout时不起作用)-->
+        android:shrinkColumns="0,1,2">
         <Button
             android:text="首页"
             android:layout_height="150dp"
-            android:drawableTop="@mipmap/home"/>
+            android:padding="50dp"
+            android:drawableTop="@mipmap/home"
+            android:layout_gravity="center"
+            android:gravity="center"/>
     </TableLayout>
 
     <TableLayout

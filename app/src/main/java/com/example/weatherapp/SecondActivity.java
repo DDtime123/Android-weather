@@ -7,9 +7,41 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "SecondActivity";
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.toolbox:{
+                startActivity(new Intent(SecondActivity.this,WeatherActivity.class));
+            }
+                break;
+            case R.id.alipay:{
+                // 打开支付宝 包名：com.eg.android.AlipayGphone
+                Intent intent = getPackageManager().getLaunchIntentForPackage("com.eg.android.AlipayGphone");
+                startActivity(intent);
+            }
+            case R.id.camera:{
+
+            }
+                break;
+            case R.id.music:{
+
+            }
+                break;
+            case R.id.position:{
+
+            }
+                break;
+            case R.id.student:{
+
+            }
+                break;
+            default:
+                break;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,42 +52,18 @@ public class SecondActivity extends AppCompatActivity {
 
 
         Button student = (Button)findViewById(R.id.student);
-        student.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent());
-            }
-        });
         Button camera = (Button)findViewById(R.id.camera);
-        camera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent());
-            }
-        });
         Button alipay = (Button)findViewById(R.id.alipay);
-        alipay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent());
-            }
-        });
         Button music = (Button)findViewById(R.id.music);
-        music.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent());
-            }
-        });
-
         Button toolbox = (Button)findViewById(R.id.toolbox);
-        toolbox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this,WeatherActivity.class));
-            }
-        });
+
+        student.setOnClickListener(this);
+        camera.setOnClickListener(this);
+        alipay.setOnClickListener(this);
+        music.setOnClickListener(this);
+        toolbox.setOnClickListener(this);
     }
+
 
 
 }

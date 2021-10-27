@@ -2,7 +2,8 @@
     android:id="@+id/activity_weather"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#d0efff">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +17,8 @@
             android:layout_weight=".50"
             android:layout_gravity="center"
             android:gravity="center"
-            android:drawablePadding="5dp">
+            android:drawablePadding="5dp"
+            android:textSize="25dp">
         </TextView>
 
         <TextView
@@ -26,7 +28,8 @@
             android:layout_weight=".50"
             android:layout_gravity="center"
             android:gravity="center"
-            android:drawablePadding="5dp">
+            android:drawablePadding="5dp"
+            android:textSize="15dp">
         </TextView>
     </LinearLayout>
 
@@ -97,25 +100,25 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/Youku"
+            android:id="@+id/Zhihu"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".50"
             android:layout_gravity="center"
             android:gravity="center"
             android:drawablePadding="5dp"
-            android:background="@drawable/ic_youku">
+            android:background="@drawable/ic_zhihu">
         </ImageButton>
 
         <ImageButton
-            android:id="@+id/Toutiao"
+            android:id="@+id/Bilibili"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".50"
             android:layout_gravity="center"
             android:gravity="center"
             android:drawablePadding="5dp"
-            android:background="@drawable/ic_toutiao">
+            android:background="@drawable/ic_bilibili_line">
         </ImageButton>
 
     </LinearLayout>

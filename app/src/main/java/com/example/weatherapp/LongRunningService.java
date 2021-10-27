@@ -103,6 +103,7 @@ public class LongRunningService extends Service {
             final String date = jsonObject.getString("date");
             final String week = jsonObject.getString("week");
             final String air = jsonObject.getString("air");
+            final String air_level = jsonObject.getString("air_level");
 
             final String update_time = jsonObject.getString("update_time");
 
@@ -114,6 +115,7 @@ public class LongRunningService extends Service {
             bundle.putString("date",date);
             bundle.putString("week",week);
             bundle.putString("air",air);
+            bundle.putString("air_level",air_level);
 
             Log.d(TAG, "城市: "+city);
             Log.d(TAG, "天气: "+wea);

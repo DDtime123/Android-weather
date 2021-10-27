@@ -17,6 +17,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -49,7 +50,23 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
         super.onResume();
         LocalBroadcastManager.getInstance(this)
                 .registerReceiver(messageReceiver, new IntentFilter("my-message"));
+        LocalBroadcastManager.getInstance(this)
+                .registerReceiver(timeReceiver, new IntentFilter("time-message"));
     }
+
+    // Handling the received Intents for the "my-integer" event
+    private BroadcastReceiver timeReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Extract data included in the Intent
+            Message msg =(Message) intent.getParcelableExtra("time-msg");
+
+            // 接下来设置日期显示
+            String date = msg.getData().getString("date");
+            String curTime = msg.getData().getString("curTime");
+            dateContent.setText(date+"\n"+curTime+"\n");
+        }
+    };
 
     // Handling the received Intents for the "my-integer" event
     private BroadcastReceiver messageReceiver = new BroadcastReceiver() {
@@ -63,21 +80,21 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
             String wea = msg.getData().getString("wea");
             String update_time = msg.getData().getString("update_time");
             String wea_img = msg.getData().getString("wea_img");
-
+            String air_level = msg.getData().getString("air_level");
             int wea_img_id = getResources().getIdentifier(wea_img , "mipmap" , getPackageName()) ;
             weather_img = ContextCompat.getDrawable(context,wea_img_id);
 
             String tem = msg.getData().getString("tem");
             Log.d(TAG, "温度："+tem+" C\n"+city+"\n更新时间："+update_time+"\n");
 
-            weatherContent.setText("温度："+tem+" C\n"+city+"\n更新时间："+update_time+"\n");
+            weatherContent.setText("温度："+tem+" C\n"+city+"\n空气质量："+air_level+"\n更新时间："+update_time+"\n");
             weatherContent.setCompoundDrawablesWithIntrinsicBounds(null,weather_img,null,null);
 
             // 接下来设置日期显示
-            String date = msg.getData().getString("date");
-            String week = msg.getData().getString("week");
-            String air = msg.getData().getString("air");
-            dateContent.setText("日期："+date+"\n"+week+"\n空气质量："+air+"\n");
+//            String date = msg.getData().getString("date");
+//            String week = msg.getData().getString("week");
+
+//            dateContent.setText("日期："+date+"\n"+week+"\n空气质量："+air+"\n");
         }
     };
 
@@ -90,7 +107,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
                     try{
                         // 将拍摄的照片显示出来
                         Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
-                        picture.setImageBitmap(bitmap);
+                        //picture.setImageBitmap(bitmap);
 
                     }catch (FileNotFoundException e){
                         e.printStackTrace();
@@ -106,6 +123,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
     protected void onPause() {
         // Unregister since the activity is not visible
         LocalBroadcastManager.getInstance(this).unregisterReceiver(messageReceiver);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(timeReceiver);
         super.onPause();
     }
 
@@ -127,7 +145,11 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         Log.d(TAG, "onClick: ");
         switch (v.getId()){
-            case R.id.Contact:
+            case R.id.Contact:{
+                // 打开联系人
+                Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+                startActivity(intent);
+            }
                 break;
             case R.id.Camera:{
                 // 创建 File 对象，用于存储拍摄的图片
@@ -152,10 +174,30 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
                 startActivityForResult(intent, TAKE_PHOTO);
             }
                 break;
-            case R.id.Weixin: break;
-            case R.id.Call: break;
-            case R.id.Youku: break;
-            case R.id.Toutiao: break;
+            case R.id.Weixin:{
+                // 打开微信 包名：com.tencent.mm
+                Intent intent = getPackageManager().getLaunchIntentForPackage("com.tencent.mm");
+                startActivity(intent);
+            }
+                break;
+            case R.id.Call:{
+                // 打开拨号
+                Intent intent = new Intent(Intent.ACTION_DIAL,null);
+                startActivity(intent);
+            }
+                break;
+            case R.id.Zhihu:{
+                // 打开知乎 包名：com.zhihu.android
+                Intent intent = getPackageManager().getLaunchIntentForPackage("com.zhihu.android");
+                startActivity(intent);
+            }
+                break;
+            case R.id.Bilibili:{
+                // 打开B站 包名：tv.danmaku.bili
+                Intent intent = getPackageManager().getLaunchIntentForPackage("tv.danmaku.bili");
+                startActivity(intent);
+            }
+                break;
             default:
                 break;
         }
@@ -168,17 +210,26 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
 
         weatherContent = (TextView) findViewById(R.id.WebContent);
         dateContent = (TextView) findViewById(R.id.DateContent);
+        // 开启天气后台服务
         Intent intent = new Intent(WeatherActivity.this,LongRunningService.class);
         this.startService(intent);
+        // 开启时钟后台服务
+        Intent intent2 = new Intent(WeatherActivity.this,TimeService.class);
+        this.startService(intent2);
 
         ImageButton btn_contact = (ImageButton) findViewById(R.id.Contact);
         ImageButton btn_camera = (ImageButton) findViewById(R.id.Camera);
         ImageButton btn_weixin = (ImageButton) findViewById(R.id.Weixin);
         ImageButton btn_call = (ImageButton) findViewById(R.id.Call);
-        ImageButton btn_youku = (ImageButton) findViewById(R.id.Youku);
-        ImageButton btn_toutiao = (ImageButton) findViewById(R.id.Toutiao);
+        ImageButton btn_zhihu = (ImageButton) findViewById(R.id.Zhihu);
+        ImageButton btn_bilibili = (ImageButton) findViewById(R.id.Bilibili);
 
         btn_camera.setOnClickListener(this);
+        btn_contact.setOnClickListener(this);
+        btn_weixin.setOnClickListener(this);
+        btn_call.setOnClickListener(this);
+        btn_zhihu.setOnClickListener(this);
+        btn_bilibili.setOnClickListener(this);
     }
 
 
