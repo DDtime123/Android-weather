@@ -11,7 +11,6 @@ public class SecondActivity extends AppCompatActivity {
     private static final String TAG = "SecondActivity";
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,11 +55,7 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(new Intent(SecondActivity.this,WeatherActivity.class));
             }
         });
-
-
     }
-
-
 
 
 }
