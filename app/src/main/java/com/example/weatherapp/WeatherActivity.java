@@ -80,14 +80,15 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
             String wea = msg.getData().getString("wea");
             String update_time = msg.getData().getString("update_time");
             String wea_img = msg.getData().getString("wea_img");
-            String air_level = msg.getData().getString("air_level");
+            //String air_level = msg.getData().getString("air_level");
+            String win_speed = msg.getData().getString("win_speed");
             int wea_img_id = getResources().getIdentifier(wea_img , "mipmap" , getPackageName()) ;
             weather_img = ContextCompat.getDrawable(context,wea_img_id);
 
             String tem = msg.getData().getString("tem");
             Log.d(TAG, "温度："+tem+" C\n"+city+"\n更新时间："+update_time+"\n");
 
-            weatherContent.setText("温度："+tem+" C\n"+city+"\n空气质量："+air_level+"\n更新时间："+update_time+"\n");
+            weatherContent.setText("温度："+tem+" C\n"+city+"\n风速："+win_speed+"\n更新时间："+update_time+"\n");
             weatherContent.setCompoundDrawablesWithIntrinsicBounds(null,weather_img,null,null);
 
             // 接下来设置日期显示

@@ -57,7 +57,8 @@ public class LongRunningService extends Service {
                     OkHttpClient client = new OkHttpClient();
                     // 要想发起请求，必须创建请求对象
                     Request request = new Request.Builder()
-                            .url("https://tianqiapi.com/api?unescape=1&version=v6&appid=31225177&appsecret=eqIA7pd6")
+                            .url("https://www.tianqiapi.com/free/day?appid=31225177&appsecret=eqIA7pd6&unescape=1")
+                            //.url("https://tianqiapi.com/api?unescape=1&version=v6&appid=31225177&appsecret=eqIA7pd6")
                             .build();
                     // 调用 OkHttpClient 的 newCall() 方法来创建一个 Call 对象，
                     // 并调用它的 execute 方法来发送请求并获取服务器返回的数据
@@ -100,11 +101,12 @@ public class LongRunningService extends Service {
             final String wea = jsonObject.getString("wea");
             final String wea_img = jsonObject.getString("wea_img");
             final String tem = jsonObject.getString("tem");
-            final String date = jsonObject.getString("date");
-            final String week = jsonObject.getString("week");
-            final String air = jsonObject.getString("air");
-            final String air_level = jsonObject.getString("air_level");
-
+            //final String date = jsonObject.getString("date");
+            //final String week = jsonObject.getString("week");
+            //final String air = jsonObject.getString("air");
+            //final String air_level = jsonObject.getString("air_level");
+            final String win = jsonObject.getString("win");
+            final String win_speed = jsonObject.getString("win_speed");
             final String update_time = jsonObject.getString("update_time");
 
             bundle.putString("city",city);
@@ -112,10 +114,12 @@ public class LongRunningService extends Service {
             bundle.putString("wea_img",wea_img);
             bundle.putString("tem",tem);
             bundle.putString("update_time",update_time);
-            bundle.putString("date",date);
-            bundle.putString("week",week);
-            bundle.putString("air",air);
-            bundle.putString("air_level",air_level);
+            //bundle.putString("date",date);
+            //bundle.putString("week",week);
+            //bundle.putString("air",air);
+            //bundle.putString("air_level",air_level);
+            bundle.putString("win",win);
+            bundle.putString("win_speed",win_speed);
 
             Log.d(TAG, "城市: "+city);
             Log.d(TAG, "天气: "+wea);
