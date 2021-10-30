@@ -57,6 +57,12 @@
                 android:layout_height="wrap_content"
                 android:text="下载图片">
             </Button>
+            <Button
+                android:id="@+id/DownloadImageIntoExternal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="下载图片到系统相册">
+            </Button>
         </LinearLayout>
     </LinearLayout>
 

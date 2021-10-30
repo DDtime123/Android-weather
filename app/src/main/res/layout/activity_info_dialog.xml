@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_info_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#d0efff"
+    android:gravity="left">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="信息"
+        android:gravity="center"
+        android:textSize="70dp">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/Accept"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight=".50"
+            android:text="Accept">
+        </Button>
+
+        <Button
+            android:id="@+id/Cancel"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight=".50"
+            android:text="Cancel">
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

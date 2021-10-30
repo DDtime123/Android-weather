@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ButtonActivity"></activity>
+        <activity android:name=".InfoDialog"
+            android:theme="@style/Theme.AppCompat.Dialog"></activity>
+        <activity android:name=".ButtonActivity" />
         <activity android:name=".CheckboxActivity" />
         <activity android:name=".ContainerActivity" />
         <activity android:name=".ImageSpin" />
