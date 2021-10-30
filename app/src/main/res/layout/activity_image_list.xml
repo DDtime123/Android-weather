@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_image_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ImageList"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:tooltipText="Hello"
+        android:layout_gravity="center">
+    </ImageView>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/LastImage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="上一张">
+        </Button>
+
+        <Button
+            android:id="@+id/NextImage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="下一张">
+        </Button>
+    </LinearLayout>
+
+
+
+</LinearLayout>

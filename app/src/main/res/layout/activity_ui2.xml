@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ui2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:stretchColumns="0,1,2"
+        android:shrinkColumns="0,1,2"> <!--shrinkColumns 设置可收缩的列，(内容过多，则收缩，扩展到第二行，控件没布满TableLayout时不起作用)-->
+        <Button
+            android:text="独占一行"/>
+        <TableRow>
+            <Button
+                android:text="000000000000000000000"
+                android:textSize="20sp"/>
+            <Button
+                android:text="1110000000000000"
+                android:textSize="20sp"/>
+            <Button
+                android:text="22222222222222222"
+                android:textSize="20sp"/>
+        </TableRow>
+        <TableRow android:paddingTop="5dp" android:paddingBottom="5dp">
+            <TextView android:text="用户名:"
+                android:gravity="center"
+                android:textSize="25sp"/>
+            <EditText android:textSize="25sp"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:layout_span="2"
+                android:shadowColor="@color/colorPrimaryDark"/>
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFCD6B"
+        android:stretchColumns="0,1">
+        <TableRow>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="填充一" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="填充二" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="普通三" />
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="0,1,2"
+        android:stretchColumns="0,1,2">
+        <TableRow>
+            <ImageView
+                android:src="@drawable/ic_girl"/>
+            <ImageView
+                android:src="@drawable/ic_man"/>
+            <ImageView
+                android:src="@drawable/ic_boy"/>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

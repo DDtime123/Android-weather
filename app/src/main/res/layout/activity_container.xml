@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFCD6B"
+        android:stretchColumns="0,1">
+        <TableRow>
+            <Button
+                android:id="@+id/ToImageList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="图片轮播" />
+            <Button
+                android:id="@+id/ToImageSpin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="图片下载" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/ToCalculator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="计算器" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/ToWordAlign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="文字布局" />
+
+            <Button
+                android:id="@+id/ToFrameLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="帧布局" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/ToUI2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UI2" />
+
+            <Button
+                android:id="@+id/ToUI4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UI4" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/ToBeautifulButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="按钮" />
+
+            <Button
+                android:id="@+id/ToCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="复选多选框" />
+        </TableRow>
+
+
+    </TableLayout>
+
+</LinearLayout>

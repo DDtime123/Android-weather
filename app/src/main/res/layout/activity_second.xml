@@ -11,6 +11,7 @@
         android:shrinkColumns="0,1,2">
         <Button
             android:text="首页"
+            android:id="@+id/home"
             android:layout_height="150dp"
             android:padding="50dp"
             android:drawableTop="@mipmap/home"

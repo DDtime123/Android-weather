@@ -26,6 +26,13 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
             }
                 break;
+            case R.id.home:{
+                // 打开书籍app
+                //startActivity(new Intent(SecondActivity.this,BookListActivity.class));
+                // 打开图像app
+                startActivity(new Intent(SecondActivity.this,ContainerActivity.class));
+            }
+            break;
             case R.id.music:{
 
             }
@@ -50,7 +57,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
         Button position = (Button)findViewById(R.id.position);
 
-
+        Button home = (Button)findViewById(R.id.home);
         Button student = (Button)findViewById(R.id.student);
         Button camera = (Button)findViewById(R.id.camera);
         Button alipay = (Button)findViewById(R.id.alipay);
@@ -62,6 +69,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         alipay.setOnClickListener(this);
         music.setOnClickListener(this);
         toolbox.setOnClickListener(this);
+        home.setOnClickListener(this);
     }
 
 

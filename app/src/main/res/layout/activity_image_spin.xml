@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_image_spin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="250dp">
+            <ImageView
+                android:id="@+id/ImageList2"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:tooltipText="Hello"
+                android:layout_gravity="center">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RadioButton android:id="@+id/Image1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="图片一"
+                    android:onClick="onRadioButtonClicked"/>
+                <RadioButton android:id="@+id/Image2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="图片二"
+                    android:onClick="onRadioButtonClicked"/>
+                <RadioButton android:id="@+id/Image3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="图片三"
+                    android:onClick="onRadioButtonClicked"/>
+                <RadioButton android:id="@+id/Image4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="图片四"
+                    android:onClick="onRadioButtonClicked"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/DownloadImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="下载图片">
+            </Button>
+        </LinearLayout>
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/angleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100">
+    </SeekBar>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.30"
+            android:gravity="center"
+            android:text="当前角度： ">
+        </TextView>
+        <TextView
+            android:id="@+id/angle_cur"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.70"
+            android:gravity="center">
+        </TextView>
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/sizeBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100">
+    </SeekBar>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.30"
+            android:gravity="center"
+            android:text="当前缩放大小： ">
+        </TextView>
+        <TextView
+            android:id="@+id/size_cur"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.70"
+            android:gravity="center">
+        </TextView>
+    </LinearLayout>
+
+
+</LinearLayout>

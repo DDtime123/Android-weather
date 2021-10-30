@@ -54,7 +54,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
                 .registerReceiver(timeReceiver, new IntentFilter("time-message"));
     }
 
-    // Handling the received Intents for the "my-integer" event
+    // Handling the received Intents for the "time-message" event
     private BroadcastReceiver timeReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -91,11 +91,6 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
             weatherContent.setText("温度："+tem+" C\n"+city+"\n风速："+win_speed+"\n更新时间："+update_time+"\n");
             weatherContent.setCompoundDrawablesWithIntrinsicBounds(null,weather_img,null,null);
 
-            // 接下来设置日期显示
-//            String date = msg.getData().getString("date");
-//            String week = msg.getData().getString("week");
-
-//            dateContent.setText("日期："+date+"\n"+week+"\n空气质量："+air+"\n");
         }
     };
 

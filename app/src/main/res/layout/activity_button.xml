@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_button"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="按钮样式1"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_corners">
+    </Button>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="按钮样式2"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/circle">
+    </Button>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="按钮样式3"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/gradient_normal">
+    </Button>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="按钮样式4"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/border_dashed">
+    </Button>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="按钮样式5"
+        android:background="@drawable/gradient">
+    </Button>
+
+</LinearLayout>
