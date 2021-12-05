@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/edit_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".fragment.EditFormDIalogFragment">
+
+    <TextView
+        android:id="@+id/lbl_your_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="请输入..." />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="姓名：" />
+    <EditText
+        android:id="@+id/txt_your_name"
+        android:layout_width="219dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:imeOptions="actionDone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="邮箱：" />
+
+    <EditText
+        android:id="@+id/txt_email"
+        android:layout_width="219dp"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:inputType="textEmailAddress" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/update_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="提交">
+        </Button>
+
+        <Button
+            android:id="@+id/update_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="取消">
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/activity_main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="0dp"
+android:paddingLeft="0dp"
+android:paddingRight="0dp"
+android:paddingTop="0dp"
+android:orientation="vertical"
+tools:context=".camera.CameraActivity">
+
+
+<ImageView
+    android:id="@+id/btn_camera"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_gravity="center"
+    android:src="@drawable/ic_camera" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <ImageSwitcher
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageShow"
+            android:layout_gravity="center"
+            >
+        </ImageSwitcher>
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <ListView
+            android:id="@+id/photoList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+        </ListView>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="图片名称:"
+        android:id="@+id/pic_name"
+        android:textSize="20sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="描述"
+        android:id="@+id/pic_info"
+        android:textSize="15sp"/>
+
+</LinearLayout>

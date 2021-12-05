@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_stu_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Student.StuListActivity">
+
+    <ProgressBar
+        android:id="@+id/stu_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/lvStus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

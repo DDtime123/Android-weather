@@ -167,6 +167,7 @@ public class ImageSpin extends AppCompatActivity implements View.OnClickListener
         try {
             FileOutputStream out = new FileOutputStream(file);
             bm.compress(Bitmap.CompressFormat.JPEG, 90, out);
+            Toast.makeText(mContext, "图片已存入相册"+file.getAbsolutePath(), Toast.LENGTH_SHORT).show();
             out.flush();
             out.close();
             Log.d(TAG, "save Image Success");

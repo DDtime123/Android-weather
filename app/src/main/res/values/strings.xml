@@ -2,4 +2,9 @@
     <string name="app_name">WeatherApp</string>
     <string name="book_list">Book</string>
     <string name="book_detail">Book Detail</string>
+    <string name="stu_list">Stu</string>
+    <string name="stu_detail">Stu Detail</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
